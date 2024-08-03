@@ -1,0 +1,52 @@
+<div>
+  <h2 style="color:A4303F;font-family:comic sans MS ;text-align: center;">Student List</h2>
+  
+  <head>
+    <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+    </head>
+    <body>
+
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Birth</th>
+          <th>Age</th>
+          <th>School</th>
+          <th>Actions</th>
+        </tr>
+         <tr *ngFor="let student of students">
+              <td>{{ student.id }}</td>
+              <td>{{ student.name }}</td>
+              <td>{{ student.birth | date }}</td>
+              <td>{{ student.age }}</td>
+              <td>{{ student.school.schoolName }}</td>
+              
+              <td>
+                <button (click)="onEdit(student)">Edit</button>
+                <button (click)="onDelete(student.id)">Delete</button>
+              </td>
+            </tr> 
+      </table>
+      
+      </body>
+ 
+</div>
+
+

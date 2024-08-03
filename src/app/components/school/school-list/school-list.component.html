@@ -1,0 +1,48 @@
+<div>
+    <h2 style="color:A4303F;font-family:comic sans MS ;text-align: center;">School List</h2>
+    
+    <head>
+      <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+      </style>
+      </head>
+      <body>
+  
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+           <tr *ngFor="let school of schools">
+                <td>{{ school.schoolId }}</td>
+                <td>{{ school.schoolName }}</td>
+                <td>{{ school.email }}</td>
+                <td>
+                  <button (click)="onEdit(school )">Edit</button>
+                  <button (click)="onDelete(school.schoolId)">Delete</button>
+                </td>
+              </tr> 
+        </table>
+        
+        </body>
+   
+  </div>
+  
+  
+  
