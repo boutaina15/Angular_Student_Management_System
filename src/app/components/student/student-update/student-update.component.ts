@@ -28,7 +28,7 @@ export class StudentUpdateComponent implements OnInit {
     if (id) {
       this.editingStudent = true;
       this.studentService.getStudent().subscribe((students: Student[]) => {
-        this.student = students.find(student => student.id === id) || this.student;
+        this.student = students.find(student => student.id === id) || this.student;    
       });
     } else {
       this.editingStudent = false;
@@ -37,7 +37,7 @@ export class StudentUpdateComponent implements OnInit {
 
   loadSchools(): void {
     this.schoolService.getAllSchools().subscribe((schools: School[]) => {
-      this.schools = schools;
+      this.schools = schools;      
     });
   }
 
